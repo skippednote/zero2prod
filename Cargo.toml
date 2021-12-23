@@ -1,21 +1,29 @@
 [package]
+edition = "2021"
 name = "zero2prod"
 version = "0.1.0"
-edition = "2021"
-
-[lib]
-path = "src/lib.rs"
-
 [[bin]]
-path = "src/main.rs"
 name = "zero2prod"
+path = "src/main.rs"
 
 [dependencies]
-actix-web = "4.0.0-beta.15"
 actix-http = "=3.0.0-beta.16"
-serde = { version = "1", features = ["derive"] }
+actix-web = "4.0.0-beta.15"
+config = "0.11.0"
+
+[dependencies.serde]
+features = ["derive"]
+version = "1"
+
+[dependencies.sqlx]
+default-features = false
+features = ["runtime-actix-rustls", "macros", "postgres", "uuid", "chrono", "migrate"]
+version = "0.5.7"
 
 [dev-dependencies]
 actix-rt = "2"
 reqwest = "0.11"
 tokio = "1"
+
+[lib]
+path = "src/lib.rs"
