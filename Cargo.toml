@@ -10,6 +10,8 @@ path = "src/main.rs"
 actix-http = "=3.0.0-beta.16"
 actix-web = "4.0.0-beta.15"
 config = "0.11.0"
+uuid = { version = "0.8.1", features = ["v4"] } 
+chrono = "0.4.15"
 
 [dependencies.serde]
 features = ["derive"]
