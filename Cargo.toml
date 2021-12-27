@@ -17,6 +17,7 @@ tracing-bunyan-formatter = "0.1.6"
 tracing-futures = "0.2.5"
 tracing-log = "0.1.2"
 log = "0.4"
+unicode-segmentation = "1.8.0"
 
 [dependencies.serde]
 features = ["derive"]

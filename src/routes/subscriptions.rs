@@ -19,6 +19,7 @@ pub struct FormData {
     )
 )]
 pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> impl Responder {
+    // let subscriber_name = crate::domain::SubscriberName(form.name.clone());
     match insert_subscriber(&pool, &form).await {
         Ok(_) => HttpResponse::Ok(),
         Err(_) => HttpResponse::InternalServerError(),
